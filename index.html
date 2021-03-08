@@ -13,7 +13,7 @@
 
 <body>
     <div class="container-fluid" id="contenedorGeneral">
-        <form>
+        <form id="formulario">
             <div class="row mb-1" id="containerH1">  
                 <div class="col-8 d-flex justify-content-start pr-2"  id="paymentFormExampleId">
                     <h1>Payment form example</h1>
@@ -29,31 +29,38 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="tarjetaCredito">Card #</label>
-                    <input type="number" class="form-control" id="tarjetaCredito" placeholder="13 digits min." min="999999999999" max="9999999999999999999" required>
+                    <input type="number" class="form-control" id="tarjetaCredito" placeholder="13 digits min." required>
+                    <!-- min="999999999999" max="9999999999999999999" -->
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="CVCTarjeta">CVC #</label>
                     <input type="number" class="form-control" id="CVCTarjeta" placeholder="123" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="montoDolares">Amount $</label>
                     <input type="number" class="form-control" id="montoDolares" placeholder="000" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Your name here (no numbers, just text)" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="lastName">Last Name</label>
                     <input type="text" class="form-control" id="lastName" placeholder="Your last name here (no numbers, just text)" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ciudadInput">City</label>
                     <input type="text" class="form-control" id="ciudadInput" placeholder="Your city here (no numbers, just text)" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">State</label>
@@ -67,6 +74,7 @@
                 <div class="form-group col-md-3">
                     <label for="codigoPostal">Postal Code</label>
                     <input type="number" class="form-control" id="codigoPostal"  placeholder="12345" required>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
             </div>
             <div class="form-row">
@@ -95,6 +103,7 @@
                 <div class="form-group col-md-6">
                     <textarea name="message" id="textAreaMessage" required></textarea>
                     <span>Add any notes here.</span>
+                    <p class="errorAlert" onsubmit="validation();"></p>
                 </div>
             </div>
             <div class="row" id="containerBotones">
