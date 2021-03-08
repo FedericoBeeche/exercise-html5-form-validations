@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a1dfb7c684.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>HTML5 Form</title>
+</head>
+
+<body>
+    <div class="container-fluid" id="contenedorGeneral">
+        <form>
+            <div class="row mb-1" id="containerH1">  
+                <div class="col-8 d-flex justify-content-start pr-2"  id="paymentFormExampleId">
+                    <h1>Payment form example</h1>
+                </div>
+                <div class="col-4" id="col-4-vacio-top"></div>
+            </div>
+            <!-- voy a usar los validations de BS, esto no se usa mas por ahora
+            <div class="row">
+                <div class="col m-3" id="someFieldsAreMissingBox">
+                    <span>Some fields are missing</span>
+                </div>
+            </div> -->
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="tarjetaCredito">Card #</label>
+                    <input type="number" class="form-control" id="tarjetaCredito" placeholder="13 digits min." min="999999999999" max="9999999999999999999" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="CVCTarjeta">CVC #</label>
+                    <input type="number" class="form-control" id="CVCTarjeta" placeholder="123" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="montoDolares">Amount $</label>
+                    <input type="number" class="form-control" id="montoDolares" placeholder="000" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Your name here (no numbers, just text)" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Your last name here (no numbers, just text)" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ciudadInput">City</label>
+                    <input type="text" class="form-control" id="ciudadInput" placeholder="Your city here (no numbers, just text)" required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputEmail4">State</label>
+                    <select class="custom-select">
+                        <option selected>...</option>
+                        <option value="1">Ohio</option>
+                        <option value="2">Florida</option>
+                        <option value="3">Alaska</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="codigoPostal">Postal Code</label>
+                    <input type="number" class="form-control" id="codigoPostal"  placeholder="12345" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <span>We accept:</span><br>
+                    <div class="radiosTarjetas pb-2" id="CCAccepted">
+                        <div class="custom-control custom-radio custom-control-inline pt-3" id="ccMC">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input" checked="checked">
+                            <label class="custom-control-label" for="customRadioInline1"><i class="fab fa-cc-mastercard"></i></label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline" id="ccVisa">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2"><i class="fab fa-cc-visa"></i></label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline" id="ccDinersClub">
+                            <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline3"><i class="fab fa-cc-diners-club"></i></label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline" id="ccAMEX">
+                            <input type="radio" id="customRadioInline4" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline4"><i class="fab fa-cc-amex"></i></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <textarea name="message" id="textAreaMessage" required></textarea>
+                    <span>Add any notes here.</span>
+                </div>
+            </div>
+            <div class="row" id="containerBotones">
+                <div class="col-6"></div>   
+                <div class="col-6 d-flex justify-content-end pr-2">
+                    <button type="submit" class="btn btn-primary mr-1" id="botonSend">Send</button>
+                    <button type="submit" class="btn btn-secondary ml-1">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="app.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
