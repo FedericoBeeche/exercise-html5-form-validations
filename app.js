@@ -13,13 +13,13 @@ window.onload = function validation() {
     var formValidate = document.getElementById('formulario');
     formValidate.addEventListener('submit', function (event) {
         event.preventDefault();
-        if (cardNum.value.length < 13 || cardNum.value.length > 19 || cardNum.value.length === '') {
+        if (cardNum.value.length < 13 || cardNum.value.length > 19 || cardNum.value.length <= 0) {
             errorCC.innerHTML = "Please enter a valid CC Number";
         }
-        else if (cardCVC.value.length !== 3 || cardCVC.value.length > 3 || cardCVC.value.length === '') {
+        else if (cardCVC.value.length !== 3 || cardCVC.value.length > 3 || cardCVC.value.length <= 0) {
             errorCVC.innterHTML = "Please enter a valid CVC Number";
-        } 
-        
+        }
+
         else {
             alert("Form sent successfully!")
         }
